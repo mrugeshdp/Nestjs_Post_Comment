@@ -1,0 +1,13 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: cimg/node:15.1
+    steps:
+      - checkout
+      - node/install-package:
+          pkg-manager: yarn
+
+workflows:
+  build_nest:
+    jobs: -build

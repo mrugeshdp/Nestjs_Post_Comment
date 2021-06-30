@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href=" project.css">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Rose&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <table class="content">
+      <tr>
+        <td id='head'></td>
+      </tr>
+      <tr>
+        <td id='colone'></td>
+        <td id='coltwo'>
+          <h1>Welcome to the Landing Page</h1>
+          <h2>We're a start-up that does something</h2>
+          <p id='paraone'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p id='paratwo'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <form class="" action="thankyou.html" method="get">
+            <h2>Sign up for our upcoming launch!</h2>
+            <p><label for="fn">First Name:</label></p>
+            <p><input type="text" name="fn" value="" required></p>
+            <p><label for="ln">Last Name:</label></p>
+            <p><input type="text" name="ln" value="" required></p>
+            <p><label for="email">Email:</label></p>
+            <p><input type="email" name="fn" value="" required></p>
+            <p><input id='sign' type="submit" name="sign" value="Sign Up Me"></p>
+
+          </form>
+        </td>
+        <td id='colthree'></td>
+      </tr>
+      <tr id='bottom'>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+    </table>
+  </body>
+</html>

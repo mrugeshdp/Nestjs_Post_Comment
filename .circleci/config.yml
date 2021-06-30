@@ -11,4 +11,5 @@ jobs:
 
 workflows:
   build_nest:
-    jobs: - build
+    jobs:
+       - build

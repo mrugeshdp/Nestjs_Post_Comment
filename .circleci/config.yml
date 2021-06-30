@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Install yarn dependencies
-          command: yarn add
+          command: npm install yarn
 
 workflows:
   build_nest:

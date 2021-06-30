@@ -5,9 +5,10 @@ jobs:
       - image: cimg/node:15.1
     steps:
       - checkout
-      - node/install-package:
-          pkg-manager: yarn
+      - run:
+          name: Install yarn dependencies
+          command: yarn add
 
 workflows:
   build_nest:
-    jobs: -build
+    jobs: - build

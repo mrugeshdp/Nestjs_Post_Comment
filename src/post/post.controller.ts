@@ -14,8 +14,8 @@ import { PostService } from './post.service';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
 import { AuthGuard } from '@nestjs/passport';
-import { GetUser } from 'src/auth/guards/getUser.guard';
-import { User } from 'src/users/entities/user.entity';
+import { GetUser } from '../auth/guards/getUser.guard';
+import { User } from '../users/entities/user.entity';
 import { Posts } from './entities/post.entity';
 import { FileInterceptor } from '@nestjs/platform-express';
 
@@ -56,7 +56,7 @@ export class PostController {
 
   @Patch('/:id')
   @UseGuards(AuthGuard('jwt'))
-  updatepost(
+  updatePost(
     @Param('id') id: string,
     @Body() updatePostDto: UpdatePostDto,
     @GetUser() user: User,

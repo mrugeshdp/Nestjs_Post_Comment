@@ -41,31 +41,35 @@ export class PostService {
     updatePostDto: UpdatePostDto,
     user: User,
   ): Promise<Posts> {
-    const { postTitle, postDescription, postStatus } = updatePostDto;
+    try {
+      const { postTitle, postDescription, postStatus } = updatePostDto;
 
-    const found = await this.postRepository.findOne({ id, user });
+      const found = await this.postRepository.findOne({ id, user });
 
-    if (!found) {
-      throw new NotFoundException(`The post with id: ${id} does not exist`);
+      if (!found) {
+        throw new NotFoundException(`The post with id: ${id} does not exist`);
+      }
+
+      if (postTitle) {
+        found.postTitle = postTitle;
+        found.updatedDate = new Date();
+      }
+
+      if (postDescription) {
+        found.postDescription = postDescription;
+        found.updatedDate = new Date();
+      }
+
+      if (postStatus) {
+        found.postStatus = postStatus;
+        found.updatedDate = new Date();
+      }
+
+      await this.postRepository.save(found);
+      return found;
+    } catch (error) {
+      return error;
     }
-
-    if (postTitle) {
-      found.postTitle = postTitle;
-      found.updatedDate = new Date();
-    }
-
-    if (postDescription) {
-      found.postDescription = postDescription;
-      found.updatedDate = new Date();
-    }
-
-    if (postStatus) {
-      found.postStatus = postStatus;
-      found.updatedDate = new Date();
-    }
-
-    await this.postRepository.save(found);
-    return found;
   }
 
   async deletePost(id: number, user: User): Promise<void> {

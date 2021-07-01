@@ -10,7 +10,7 @@ export class UsersService {
   constructor(
     @InjectRepository(User) private userRepository: Repository<User>,
   ) {}
-  async create(createUserDto: CreateUserDto): Promise<void> {
+  async create(createUserDto: CreateUserDto): Promise<User> {
     try {
       const salt = await bcrypt.genSalt();
       const hashedPassword = await bcrypt.hash(createUserDto.password, salt);
@@ -20,11 +20,10 @@ export class UsersService {
         lname: createUserDto.lname,
         email: createUserDto.email,
         password: hashedPassword,
-        createdDate: createUserDto.createdDate,
-        updatedData: createUserDto.updatedDate,
       });
 
       await this.userRepository.save(user);
+      return user;
     } catch (error) {
       return error;
     }

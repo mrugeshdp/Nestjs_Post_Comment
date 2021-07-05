@@ -3,13 +3,18 @@ jobs:
   build:
     docker:
       - image: cimg/node:15.1
+      - image: circleci/postgres:9.6.5-alpine-ram
+        environment:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: demo_blog
     steps:
       - checkout
       - run:
           name: Install yarn dependencies
-          command: npm install yarn
+          command: yarn install
 
 workflows:
   build_nest:
     jobs:
-       - build
+      - build

@@ -16,7 +16,7 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Install yarn dependencies
+          name: Install yarn dependencies
           command: npm install yarn
 
 workflows:

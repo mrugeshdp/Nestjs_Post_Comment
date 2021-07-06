@@ -9,10 +9,10 @@ jobs:
         #   PGHOST: 127.0.0.1
         #   PGUSER: postgres
       - image: circleci/postgres:latest
-        environment:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: demo_blog
+        # environment:
+        #   POSTGRES_USER: postgres
+        #   POSTGRES_PASSWORD: postgres
+        #   POSTGRES_DB: demo_blog
     steps:
       - checkout
       - run:

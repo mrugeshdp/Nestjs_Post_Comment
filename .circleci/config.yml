@@ -5,6 +5,9 @@ jobs:
   build:
     docker:
       - image: cimg/node:15.1
+        # environment:
+        #   PGHOST: 127.0.0.1
+        #   PGUSER: postgres
       - image: circleci/postgres:latest
         environment:
           POSTGRES_USER: postgres
@@ -13,7 +16,8 @@ jobs:
     steps:
       - checkout
       - run:
-          command: npm install
+        name: Install yarn dependencies
+          command: npm install yarn
 
 workflows:
   build_nest:

@@ -16,7 +16,9 @@ jobs:
             sudo yum update
             sudo yum install python3-pip
             sudo pip3 install awsebcli --upgrade
-            yarn add && yarn run build
+      - run:
+          name: building
+          command: yarn add && yarn run build
 
   deploy:
     docker:

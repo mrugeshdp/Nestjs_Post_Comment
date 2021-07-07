@@ -11,12 +11,6 @@ jobs:
           name: Install yarn dependencies
           command: npm install yarn
       - run:
-          name: Installing AWS CLI
-          command: |
-            sudo yum update
-            sudo yum install python3-pip
-            sudo pip3 install awsebcli --upgrade
-      - run:
           name: building
           command: yarn add && yarn run build
 

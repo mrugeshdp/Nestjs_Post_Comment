@@ -23,4 +23,6 @@ workflows:
   build_nest:
     jobs:
       - build
-      - deploy
+      - deploy:
+          requires:
+            - build

@@ -18,7 +18,7 @@ jobs:
       - checkout
       - run:
           name: changing pem file permissions
-          commanf: chmod 400 nestjs_example.pem
+          command: chmod 400 nestjs_example.pem
       - run:
           name: connecting to ssh client
           command: ssh -i "nestjs_example.pem" ec2-user@ec2-13-235-42-133.ap-south-1.compute.amazonaws.com

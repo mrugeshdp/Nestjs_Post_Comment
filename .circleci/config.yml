@@ -9,9 +9,26 @@ jobs:
       - checkout
       - run:
           name: Install yarn dependencies
-          command: npm install yarn
+          command: npm install -g yarn
+          name: Installing AWS CLI
+          command: |
+            sudo yum update
+            sudo yum install python3-pip
+            sudo pip3 install awsebcli --upgrade
+          run: yarn add && yarn run build
+
+  deploy:
+    docker:
+      - image: cimg/node:15.1
+    environment:
+      host: 13.235.42.133
+    steps:
+      - checkout
+      
+
 
 workflows:
   build_nest:
     jobs:
       - build
+      - deploy

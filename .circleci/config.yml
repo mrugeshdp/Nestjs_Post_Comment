@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           name: Install yarn dependencies
-          command: npm install -g yarn
+          command: npm install yarn
       - run:
           name: Installing AWS CLI
           command: |
